@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block title %}Department Website{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Sticky navbar */
+        .navbar-fixed {
+            position: relative;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white;
+            transition: top 0.3s;
+        }
+        
+        /* Upper part styling */
+        .navbar-upper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        /* Hide upper part on scroll */
+        .navbar-upper.hidden {
+            transform: translateY(-100%);
+        }
+
+        /* Navigation bar styling */
+        .navbar-lower {
+            padding: 10px;
+            background-color: #007bff;
+        }
+
+        .navbar-lower a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+
+        .navbar-lower a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+  <body>
+
+    <div class="navbar-fixed">
+      <!-- Upper Navbar (Logos & Department Name) -->
+      <div class="navbar-upper" id="navbar-upper">
+          <img src="{{ url_for('static', filename='images/IIT KGP logo.jpg') }}" alt="IIT KGP logo" style="width: 100px;">
+          <div>
+            <div class="row justify-content-center">
+              <img src="{{ url_for('static', filename='images/dia-coe-iitkgp.png') }}" alt="IIT KGP logo"  style="width: 110px;">
+            </div>
+            
+            <h2 class="text-center">DIA Centre of Excellence</h2>
+            <h3 class="text-center">Indian Institute of Technology Kharagpur</h3>
+          </div>
+          <img src="{{ url_for('static', filename='images/IIT KGP logo.jpg') }}" alt="IIT KGP logo" style="width: 100px;">
+      </div>
+
+      <nav class="navbar-lower text-center">
+        <a  href="{{ url_for('app.home') }}">Home</a></li>
+        <a  href="{{ url_for('app.directors_profile') }}">Director's Profile</a></li>
+        <a  href="{{ url_for('app.people') }}">People</a></li>
+        <a  href="{{ url_for('app.verticals') }}">Verticals</a></li>
+    </nav>
+
+
+    <!-- Page Content -->
+<div style="margin-top: 2px; padding: 2px; min-height: 200vh;">
+  {% block content %}{% endblock %}
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript for Scroll Behavior -->
+<script>
+    let prevScrollPos = window.pageYOffset;
+    window.onscroll = function() {
+        let currentScrollPos = window.pageYOffset;
+        let upperNavbar = document.getElementById("navbar-upper");
+
+        if (prevScrollPos > currentScrollPos) {
+            // Scrolling up -> Show upper part
+            upperNavbar.classList.remove("hidden");
+        } else {
+            // Scrolling down -> Hide upper part
+            upperNavbar.classList.add("hidden");
+        }
+
+        prevScrollPos = currentScrollPos;
+    };
+</script>
+
+  </body>
+</html>
+

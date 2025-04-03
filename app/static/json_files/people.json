@@ -1,0 +1,26 @@
+[
+    {
+        "id": "person1",
+        "name": "Mr B Deepak Rao",
+        "designation": "Accounts Officer",
+        "email": "accounts_ officer_dia_coe@iitkgp.ac.in",
+        "image": "B Deepak Rao_Accounts Officer.png",
+        "description": "B Deepak Rao joined as Accounts Officer in DIA-CoE, IIT Kharagpur in October 2024. Prior to that, he worked as Project Officer in the Department of Computer Science Engineering, IIT Kharagpur during 2023-2024. \n He is responsible for managing the financial accounts and transactions for the centre. His role involves overseeing the financial records, monitoring the payable and receivable accounts, preparing financial reports, handling budgets, supporting internal audits. and maintaining the financial stability through accounting practices. He works diligently with the finance, management and auditing teams of IIT Kharagpur to maintain a smooth and transparent financial operation. He possesses strong analytical skills, and a good understanding of financial software and accounting principles to perform the duties effectively. "
+    },
+    {
+        "id": "person2",
+        "name": "Mr Subhodeep Jana",
+        "designation": "Administrative Officer",
+        "email": "administrative_officer_dia_coe@iitkgp.ac.in",
+        "image": "Subhodeep Jana_Administrative Officer.png",
+        "description": "Subhodeep Jana joined as Administrative Officer in DIA-CoE, IIT Kharagpur in November 2024. Prior to that, he worked as Senior Project Associate in the Department of Materials Engineering, IISc Bangalore and Facility Manager in the Department of Design and Manufacturing, IISc Bangalore respectively.  He was involved in research activities like additive manufacturing and characterization of materials by X-ray computed tomography.\nHe is responsible for overseeing and managing the administrative functions within the centre. His key responsibilities include managing the day-to-day office activities, record keeping, scheduling and coordination of various meetings related to research verticals of the centre and communicating with various stake holders related to the centre."
+    },
+    {
+        "id": "person3",
+        "name": "Mr. Yogesh Kumar Tripude",
+        "designation": "Multitasking Staff",
+        "email": "yogeshkumartripude@gmail.com",
+        "image": "Yogesh Kr. tripude_Office Assistant.jpg",
+        "description": ""
+    }
+]

@@ -1,0 +1,105 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<style>
+  .owl-carousel .item img {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ffa500, #ff6347);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ffcc00, #ff4500);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
+}
+</style>
+
+
+<!-- Announcements Section -->
+<div class="container mt-3">
+  <div class="bg-light p-3 rounded border d-flex align-items-center">
+    <strong class="text-danger me-3">📢 Announcements:</strong>
+    <div class="overflow-hidden flex-grow-1">
+      <div id="announcement-slider" class="text-nowrap" style="animation: scroll-left 15s linear infinite;">
+        🔹 Seminar on AI & ML - Register Now! &nbsp;&nbsp; | 
+        🔹 Department Annual Meetup - April 10 &nbsp;&nbsp; | 
+        🔹 Internship Opportunities - Apply Today!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Carousel Section -->
+<div class="container mt-4">
+  <div class="owl-carousel owl-theme">
+    {% for image in [
+      'images/Centre Photos/1732632642347.jpg',
+      'images/Centre Photos/1732632642306.jpg',
+      'images/Centre Photos/1732632642434.jpg',
+      'images/Centre Photos/1732632826167.jpg'
+    ] %}
+    <div class="item">
+      <img src="{{ url_for('static', filename=image) }}" alt="Department Image" class="img-fluid rounded shadow-sm">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Welcome Section -->
+<div class="container mt-5">
+  <div class="p-5 rounded" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(5px); box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+    <h1 class="text-center text-primary mb-4">Welcome to the DIA-CoE IIT Kharagpur</h1>
+    <p class="lead">The DRDO Industry Academia Centre of Excellence (DIA-CoE) at IIT Kharagpur is a hub of innovation and collaborative research in defense technologies.</p>
+    <p>DIA-CoEs are established by DRDO in premier academic institutions to foster a research ecosystem with academia, industry, and startups. Our center is one of 15 across India, dedicated to developing cutting-edge and critical defense technologies.</p>
+    <p>Since its inception in 2020, DIA-CoE IIT Kharagpur has operated across 48,000 sq. ft., focusing on four major research verticals and collaborating with top scientists, students, and innovators.</p>
+    <div class="text-center">
+      <a class="btn btn-primary btn-lg mt-3" href="{{ url_for('app.verticals') }}">Explore Our Research</a>
+    </div>
+  </div>
+</div>
+
+<!-- Inline Styles -->
+<style>
+  @keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $(".owl-carousel").owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      nav: false,
+      dots: true
+    });
+  });
+</script>
+{% endblock %}

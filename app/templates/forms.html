@@ -1,0 +1,113 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Forms{% endblock %}
+
+{% block content %}
+<!-- CSS Styling -->
+<style>
+  .form-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease-in-out;
+  }
+  
+  .form-card:hover {
+      transform: translateY(-5px);
+  }
+
+  .form-icon {
+      font-size: 40px;
+      color: #dc3545;
+  }
+
+  .card-title a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+  }
+
+  .card-title a:hover {
+      text-decoration: underline;
+  }
+</style>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">📄 Download Forms</h2>
+  <p class="text-center text-muted">Click on the form name to download the required document.</p>
+
+  <div class="row">
+      <!-- Form 1 -->
+      <div class="col-md-6">
+          <div class="card form-card">
+              <div class="card-body d-flex align-items-center">
+                  <i class="fas fa-file-pdf form-icon"></i>
+                  <div class="ml-3">
+                      <h5 class="card-title">
+                          <a href="{{ url_for('static', filename='forms/form1.pdf') }}" download>
+                              Application for Leave
+                          </a>
+                      </h5>
+                      <p class="card-text text-muted">Form to apply for leave within the department.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Form 2 -->
+      <div class="col-md-6">
+          <div class="card form-card">
+              <div class="card-body d-flex align-items-center">
+                  <i class="fas fa-file-pdf form-icon"></i>
+                  <div class="ml-3">
+                      <h5 class="card-title">
+                          <a href="{{ url_for('static', filename='forms/form2.pdf') }}" download>
+                              Reimbursement Claim Form
+                          </a>
+                      </h5>
+                      <p class="card-text text-muted">Use this form to claim reimbursement for expenses.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Form 3 -->
+      <div class="col-md-6">
+          <div class="card form-card">
+              <div class="card-body d-flex align-items-center">
+                  <i class="fas fa-file-pdf form-icon"></i>
+                  <div class="ml-3">
+                      <h5 class="card-title">
+                          <a href="{{ url_for('static', filename='forms/form3.pdf') }}" download>
+                              Conference Travel Grant Form
+                          </a>
+                      </h5>
+                      <p class="card-text text-muted">Apply for financial support for attending conferences.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Form 4 -->
+      <div class="col-md-6">
+          <div class="card form-card">
+              <div class="card-body d-flex align-items-center">
+                  <i class="fas fa-file-pdf form-icon"></i>
+                  <div class="ml-3">
+                      <h5 class="card-title">
+                          <a href="{{ url_for('static', filename='forms/ProjectProposalAssFormat_TEC.pdf') }}" download>
+                              Research Project Proposal
+                          </a>
+                      </h5>
+                      <p class="card-text text-muted">Submit your research project proposal for approval.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+
