@@ -3,109 +3,64 @@
 {% block title %}People{% endblock %}
 
 {% block content %}
-
-<!-- Styling -->
-<style>
-    /* Director Section */
-    .director-card {
-        width: 50%;
-        margin: 0 auto;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        background-color:beige;
-    }
-
-    .director-img {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 10px;
-    }
-
-    /* People Section */
-    .people-card {
-        padding: 10px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        background-color: aliceblue;
-    }
-
-    .people-img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 10px;
-    }
-
-    .people-description {
-        display: none;
-        margin-top: 10px;
-        color: #555;
-    }
-
-    .read-more-btn {
-        margin-top: 10px;
-    }
-</style>
-
 <div class="container mt-5">
+    <h2 class="text-center text-primary mb-5">👨‍🔬 Our Team</h2>
 
     <!-- Director Section -->
-    <div class="container-fluid">
-        <h2 class="text-center mb-4">Director</h2>
-        <div class="card director-card text-center">
-            <div class="row justify-content-center">
-                <img src="{{ url_for('static', filename='images/Dr. Dipak Kr. Das_Director.JPG') }}"
-                    class="director-img" alt="Director photo">
-            </div>
-
-            <div class="card-body">
-                <h4>Dr Dipak Kumar Das</h4>
-                <p class="text-muted">Director, DIA CoE IITKGP</p>
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-6 text-center">
+            <div class="card border-0 shadow-sm p-4 bg-light rounded">
+                <div class="d-flex justify-content-center mb-3">
+                    <img src="{{ url_for('static', filename='images/Dr. Dipak Kr. Das_Director.JPG') }}" alt="Director"
+                        class="rounded-circle" style="width: 220px; height: 220px; object-fit: cover;">
+                </div>
+                <h4 class="text-primary">Dr. Dipak Kumar Das</h4>
+                <p class="text-muted mb-1">Director, DIA CoE IITKGP</p>
             </div>
         </div>
     </div>
 
-    <!-- Other People Section -->
-    <div class="container-fluid">
-        <h2 class="text-center mt-5 mb-4">Members</h2>
-        <div class="row">
-            {% for person in people %}
-            <div class="col-md-4 mb-4">
-                <div class="card people-card">
-                    <div class="row justify-content-center">
-                        <img src="{{ url_for('static', filename='images/' + person.image) }}" class="people-img"
-                            alt="{{ person.name }}">
-                    </div>
-
-                    <div class="card-body text-center">
-                        <h5>{{ person.name }}</h5>
-                        <p class="text-muted">{{ person.designation }}</p>
-                        <button class="btn btn-primary read-more-btn"
-                            onclick="toggleDescription('{{ person.id }}')">Read More</button>
-                        <p class="people-description" id="{{ person.id }}">{{ person.description }}</p>
-                    </div>
+    <!-- Members Section -->
+    <h3 class="text-center text-secondary mb-4">Team Members</h3>
+    <div class="row g-4">
+        {% for person in people %}
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm text-center p-3 h-100">
+                <div class="d-flex justify-content-center mb-3">
+                    <img src="{{ url_for('static', filename='images/' + person.image) }}" alt="{{ person.name }}"
+                        class="rounded-circle" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
+                <h5 class="text-dark">{{ person.name }}</h5>
+                <p class="text-muted mb-2">{{ person.designation }}</p>
+                <button class="btn btn-outline-primary btn-sm" onclick="toggleDescription('{{ person.id }}')">More
+                    Info</button>
+                <div class="people-description mt-3" id="{{ person.id }}" style="display:none;">
+                    <p class="text-muted small">{{ person.description }}</p>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
-<!-- JavaScript to Toggle Read More -->
+
+<!-- JS Toggle -->
 <script>
     function toggleDescription(id) {
-        var desc = document.getElementById(id);
-        if (desc.style.display === "none" || desc.style.display === "") {
-            desc.style.display = "block";
-        } else {
-            desc.style.display = "none";
-        }
+        const desc = document.getElementById(id);
+        desc.style.display = (desc.style.display === "block") ? "none" : "block";
     }
 </script>
 
+<style>
+    .card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
 
+    .btn-outline-primary {
+        border-radius: 20px;
+        font-size: 0.85rem;
+        padding: 6px 16px;
+    }
+</style>
 {% endblock %}

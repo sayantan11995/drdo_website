@@ -1,13 +1,60 @@
-{% extends 'base.html' %}
+{% extends 'navbar.html' %}
 
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-  <h2>Contact Us</h2>
-  <p>Email: contact@academicdept.edu</p>
-  <p>Phone: +91-9876543210</p>
-  <p>Address: XYZ Academic Building, IIT</p>
-</div>
-{% endblock %}
+<div class="container mt-5">
+  <h2 class="text-center text-primary mb-4">📬 Contact Us</h2>
+  <p class="text-center text-muted mb-5">Feel free to reach out or visit us at our center.</p>
 
+  <div class="row g-4">
+    <!-- Address Block -->
+    <div class="col-md-6">
+      <div class="bg-light rounded shadow-sm p-4 h-100">
+        <h5 class="text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Our Address</h5>
+        <p class="mb-1">DIA-CoE, IIT Kharagpur</p>
+        <p class="mb-1">4th Floor, Room No.: 408 & 410,</p>
+        <p class="mb-1">Nano Science - SATHI Building (Diamond Jubilee Building-II)</p>
+        <p>I.I.T Kharagpur - 721302, West Bengal</p>
+
+        <h5 class="text-primary mt-4"><i class="fas fa-envelope me-2"></i>Email</h5>
+        <p class="mb-1"><a href="mailto:director_dia_coe@iitkgp.ac.in">director_dia_coe@iitkgp.ac.in</a></p>
+        <p class="mb-1"><a href="mailto:administrative_officer_dia_coe@iitkgp.ac.in">administrative_officer_dia_coe@iitkgp.ac.in</a></p>
+        <p><a href="mailto:accounts_officer_dia_coe@iitkgp.ac.in">accounts_officer_dia_coe@iitkgp.ac.in</a></p>
+
+        <h5 class="text-primary mt-4"><i class="fas fa-phone me-2"></i>Phone</h5>
+        <p>03222-214661 / 4660</p>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="col-md-6">
+      <div class="ratio ratio-4x3 rounded shadow-sm">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.2865415151624!2d87.30532801542236!3d22.318388846122107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0267e6458a6db3%3A0xb0a8b0f6fa8e07c2!2sIIT%20Kharagpur!5e0!3m2!1sen!2sin!4v1681586315000!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+  .container a {
+    text-decoration: none;
+    color: #0d47a1;
+    font-weight: 500;
+  }
+
+  .container a:hover {
+    text-decoration: underline;
+  }
+
+  iframe {
+    border-radius: 10px;
+  }
+</style>
+{% endblock %}

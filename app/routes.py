@@ -42,6 +42,19 @@ def dia_coes():
 def forms():
     return render_template('forms.html')
 
+@blueprint.route('/achievements')
+def achievements():
+    return render_template('achievements.html')
+
+@blueprint.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+
 @blueprint.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@blueprint.route('/important_links')
+def important_links():
+    return render_template('important_links.html')

@@ -3,111 +3,185 @@
 {% block title %}Forms{% endblock %}
 
 {% block content %}
-<!-- CSS Styling -->
-<style>
-  .form-card {
-      background: #f8f9fa;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-      margin-bottom: 20px;
-      transition: transform 0.2s ease-in-out;
-  }
-  
-  .form-card:hover {
-      transform: translateY(-5px);
-  }
-
-  .form-icon {
-      font-size: 40px;
-      color: #dc3545;
-  }
-
-  .card-title a {
-      text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
-  }
-
-  .card-title a:hover {
-      text-decoration: underline;
-  }
-</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <div class="container mt-5">
-  <h2 class="text-center mb-4">📄 Download Forms</h2>
-  <p class="text-center text-muted">Click on the form name to download the required document.</p>
+  <h2 class="text-center text-primary mb-4">📄 Download Forms</h2>
+  <p class="text-center text-muted mb-4">Select a category below to find the forms you need.</p>
 
-  <div class="row">
-      <!-- Form 1 -->
-      <div class="col-md-6">
-          <div class="card form-card">
-              <div class="card-body d-flex align-items-center">
-                  <i class="fas fa-file-pdf form-icon"></i>
-                  <div class="ml-3">
-                      <h5 class="card-title">
-                          <a href="{{ url_for('static', filename='forms/form1.pdf') }}" download>
-                              Application for Leave
-                          </a>
-                      </h5>
-                      <p class="card-text text-muted">Form to apply for leave within the department.</p>
-                  </div>
-              </div>
-          </div>
+  <div class="accordion" id="formsAccordion">
+    <!-- Project Forms -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-primary text-white" id="headingAdmin">
+        <h5 class="mb-0">
+          <button class="btn btn-link text-white w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin">
+            <i class="fas fa-folder-open me-2"></i> Project Forms
+          </button>
+        </h5>
       </div>
+      <div id="collapseAdmin" class="collapse show" data-bs-parent="#formsAccordion">
+        <div class="card-body bg-light">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fas fa-file-pdf text-danger me-2"></i>
+              <a href="{{ url_for('static', filename='forms/Project_Closure_forms_DFTM_ 20nov.pdf') }}" class="fw-bold" download>Project Closure Form</a>
+            </li>
+            <li>
+              <i class="fas fa-file-pdf text-danger me-2"></i>
+              <a href="{{ url_for('static', filename='forms/ProjectFeedbadkFormat.pdf') }}" class="fw-bold" download>Project Feedback Form</a>
+            </li>
+            <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/ProjectProposalAssFormat_TEC.pdf') }}" class="fw-bold" download>Project Proposal Assessment Form</a>
+              </li>
+              <li>
+                <i class="fas fa-file-word text-primary me-2"></i>
+                <a href="{{ url_for('static', filename='forms/Project_Closure_forms_DFTM_ 20nov.docx') }}" class="fw-bold" download>Project Closure Form</a>
+              </li>
+              <li>
+                <i class="fas fa-file-word text-primary me-2"></i>
+                <a href="{{ url_for('static', filename='forms/Feedback form 23 Dec24_DIA-COE, DRDO.docx') }}" class="fw-bold" download>Project Feedback Form</a>
+              </li>
+              <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/proposal assessment form 23Dec24.docx') }}" class="fw-bold" download>Project Proposal Assessment Form</a>
+                </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <!-- Form 2 -->
-      <div class="col-md-6">
-          <div class="card form-card">
-              <div class="card-body d-flex align-items-center">
-                  <i class="fas fa-file-pdf form-icon"></i>
-                  <div class="ml-3">
-                      <h5 class="card-title">
-                          <a href="{{ url_for('static', filename='forms/form2.pdf') }}" download>
-                              Reimbursement Claim Form
-                          </a>
-                      </h5>
-                      <p class="card-text text-muted">Use this form to claim reimbursement for expenses.</p>
-                  </div>
-              </div>
-          </div>
+    <!-- Administrative & Academic Forms Forms -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-success text-white" id="headingTravel">
+        
+        <h5 class="mb-0">
+          <button class="btn btn-link text-white w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTravel">
+            <i class="fas fa-folder-open me-2"></i> Administrative & Academic Forms
+          </button>
+        </h5>
       </div>
+      <div id="collapseTravel" class="collapse" data-bs-parent="#formsAccordion">
+        <div class="card-body bg-light">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fas fa-file-pdf text-danger me-2"></i>
+              <a href="{{ url_for('static', filename='forms/REQUISITION FORM FOR BOOKING_CLASSROOM & AUDITORIUM.pdf') }}" class="fw-bold" download>REQUISITION FORM FOR BOOKING_CLASSROOM & AUDITORIUM</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <!-- Form 3 -->
-      <div class="col-md-6">
-          <div class="card form-card">
-              <div class="card-body d-flex align-items-center">
-                  <i class="fas fa-file-pdf form-icon"></i>
-                  <div class="ml-3">
-                      <h5 class="card-title">
-                          <a href="{{ url_for('static', filename='forms/form3.pdf') }}" download>
-                              Conference Travel Grant Form
-                          </a>
-                      </h5>
-                      <p class="card-text text-muted">Apply for financial support for attending conferences.</p>
-                  </div>
-              </div>
-          </div>
+    <!-- Finance Forms -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-warning text-dark" id="headingResearch">
+        <h5 class="mb-0">
+          <button class="btn btn-link w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResearch">
+            💰 Finance Related Forms
+          </button>
+        </h5>
       </div>
+      <div id="collapseResearch" class="collapse" data-bs-parent="#formsAccordion">
+        <div class="card-body bg-light">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fas fa-file-pdf text-danger me-2"></i>
+              <a href="{{ url_for('static', filename='forms/FINANCE/27_08_2020_DFTM_Contingent BIll.pdf') }}" class="fw-bold" download>DFTM Contingent Bill</a>
+              
+            </li>
 
-      <!-- Form 4 -->
-      <div class="col-md-6">
-          <div class="card form-card">
-              <div class="card-body d-flex align-items-center">
-                  <i class="fas fa-file-pdf form-icon"></i>
-                  <div class="ml-3">
-                      <h5 class="card-title">
-                          <a href="{{ url_for('static', filename='forms/ProjectProposalAssFormat_TEC.pdf') }}" download>
-                              Research Project Proposal
-                          </a>
-                      </h5>
-                      <p class="card-text text-muted">Submit your research project proposal for approval.</p>
-                  </div>
-              </div>
-          </div>
+            <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/27_08_2020_DFTM_ECS.pdf') }}" class="fw-bold" download>DFTM ECS</a>
+                
+              </li>
+              <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/audited expenditure form project.pdf') }}" class="fw-bold" download>Audited Expenditure Form Project</a>
+                
+              </li>
+              <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/audited expenditure form_running and operation.pdf') }}" class="fw-bold" download>Audited Expenditure Form Running and Operation</a>
+                
+              </li>
+              <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/Format for Annual_Half yearly_Quarterly Progress Report.pdf') }}" class="fw-bold" download>Format for Annual_Half yearly_Quarterly Progress Report</a>
+                
+              </li>
+              <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/Format for Permission to Publish Research Paper DIA-COE.pdf') }}" class="fw-bold" download>Format for Permission to Publish Research Paper DIA-COE</a>
+                
+              </li>
+              <li>
+                <i class="fas fa-file-pdf text-danger me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/utilization certificate.pdf') }}" class="fw-bold" download>Utilization Certificate</a>
+                
+              </li>
+
+
+              <!-- Word files -->
+              <li>
+                <i class="fas fa-file-word text-primary me-2"></i>
+                <a href="{{ url_for('static', filename='forms/FINANCE/Files/27_08_2020_DFTM_Contingent BIll.docx') }}" class="fw-bold" download>DFTM Contingent Bill</a>
+                
+              </li>
+  
+              <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/FINANCE/Files/27_08_2020_DFTM_ECS.docx') }}" class="fw-bold" download>DFTM ECS</a>
+                  
+                </li>
+                <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/FINANCE/Files/audited expenditure form project.docx') }}" class="fw-bold" download>Audited Expenditure Form Project</a>
+                  
+                </li>
+                <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/FINANCE/Files/audited expenditure form_running and operation.docx') }}" class="fw-bold" download>Audited Expenditure Form Running and Operation</a>
+                  
+                </li>
+                <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/FINANCE/Files/Format for Annual_Half yearly_Quarterly Progress Report.docx') }}" class="fw-bold" download>Format for Annual_Half yearly_Quarterly Progress Report</a>
+                  
+                </li>
+                <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/FINANCE/Files/Format for Permission to Publish Research Paper DIA-COE.docx') }}" class="fw-bold" download>Format for Permission to Publish Research Paper DIA-COE</a>
+                  
+                </li>
+                <li>
+                  <i class="fas fa-file-word text-primary me-2"></i>
+                  <a href="{{ url_for('static', filename='forms/FINANCE/Files/utilization certificate.docx') }}" class="fw-bold" download>Utilization Certificate</a>
+                  
+                </li>
+          </ul>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 
-{% endblock %}
+<style>
+  .card-header .btn {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
+  .card-header .btn:hover {
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  .accordion .card-body ul li a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}

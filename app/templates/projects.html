@@ -1,0 +1,142 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-center text-primary">Our Projects</h2>
+
+  <!-- Filter Badges for filtering projects based on verticals
+  <div class="mb-4 text-center">
+    <button class="badge bg-info text-dark mx-1 filter-btn" data-filter="All">All</button>
+    <button class="badge bg-warning text-dark mx-1 filter-btn" data-filter="AI">AI</button>
+    <button class="badge bg-success text-white mx-1 filter-btn" data-filter="Drone">Drone</button>
+    <button class="badge bg-secondary text-white mx-1 filter-btn" data-filter="Communication">Communication</button>
+  </div> -->
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4 justify-content-center" id="projectTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="ongoing-tab" data-bs-toggle="tab" data-bs-target="#ongoing" type="button" role="tab">🔧 Ongoing Projects</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab">✅ Completed Projects</button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content" id="projectTabsContent">
+    <!-- Ongoing Projects -->
+    <div class="tab-pane fade show active" id="ongoing" role="tabpanel">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">AI-based Surveillance System</h5>
+              <p class="card-text">Developing smart border monitoring using vision and analytics.</p>
+              <span class="badge bg-success">Ongoing</span>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">📄 Download Summary</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Autonomous Drone Swarm</h5>
+              <p class="card-text">Building coordinated UAVs for recon and rapid response.</p>
+              <span class="badge bg-success">Ongoing</span>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">📄 Download Summary</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Completed Projects -->
+    <div class="tab-pane fade" id="completed" role="tabpanel">
+      <div class="row g-4 mt-2">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Smart Radar Imaging</h5>
+              <p class="card-text">Real-time detection system implemented with radar analytics (2021–2023).</p>
+              <span class="badge bg-secondary">Completed</span>
+              <a href="#" class="btn btn-sm btn-outline-secondary mt-3">📄 View Report</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Defense Blockchain Architecture</h5>
+              <p class="card-text">Secured decentralized communication network for tactical ops.</p>
+              <span class="badge bg-secondary">Completed</span>
+              <a href="#" class="btn btn-sm btn-outline-secondary mt-3">📄 View Report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-primary, .btn-outline-secondary {
+    border-radius: 30px;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+
+  .nav-tabs .nav-link.active {
+    background-color: #ffa800;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+  }
+
+  .filter-btn.active {
+  background-color: #0d47a1 !important;
+  color: white !important;
+}
+</style>
+
+<script>
+  const triggerTabList = [].slice.call(document.querySelectorAll('#projectTabs button'))
+  triggerTabList.forEach(triggerEl => {
+    const tabTrigger = new bootstrap.Tab(triggerEl)
+    triggerEl.addEventListener('click', event => {
+      event.preventDefault()
+      tabTrigger.show()
+    })
+  })
+</script>
+
+<script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+  
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+  
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'All' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+  
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+{% endblock %}

@@ -3,77 +3,64 @@
 {% block title %}Director's Profile{% endblock %}
 
 {% block content %}
-<!-- CSS Styling -->
-<style>
-    /* Director Card */
-    .director-card {
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #f8f9fa;
-    }
-    .director-img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    /* Director Description */
-    .director-description {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-family: 'Merriweather', serif; /* Professional Font */
-        line-height: 1.6;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .director-card {
-            text-align: center;
-        }
-        .director-description {
-            margin-top: 20px;
-        }
-    }
-</style>
-
 <div class="container mt-5">
-    <div class="row">
-        <!-- Left: Director Card -->
-        <div class="col-md-4">
-            <div class="card director-card">
-                <div class="row justify-content-center">
-                    <img src="{{ url_for('static', filename='images/Dr. Dipak Kr. Das_Director.JPG') }}" class="card-img-top director-img" alt="Director">
-                </div>
-                
-                <div class="card-body text-center">
-                    <h4 class="card-title">Dr Dipak Kumar Das</h4>
-                    <p class="text-muted">Director, DIA CoE IITKGP</p>
-                </div>
-            </div>
-        </div>
+  <h2 class="text-center text-primary mb-4">🎓 Director's Profile</h2>
 
-        <!-- Right: Director Description -->
-        <div class="col-md-8">
-            <div class="director-description">
-                <h2>About the Director</h2>
-                <p>
-                    Dr Dipak Kumar Das took over as Director, DIA-CoE IIT Kharagpur in January 2024. Prior to that, he served as Scientist H at the Defence Metallurgical Research Laboratory, Hyderabad, since November 1987 and held position of Associate Director at the Defence Metallurgical Research Laboratory, Hyderabad for 13 years.
-                </p>
-                <p>
-                    He received his undergraduate and postgraduate degree in Metallurgical Engineering from IIT Kharagpur. He earned his PhD in the area of metallurgical engineering at IIT BHU in the year 2001. He carried out his Post Doctoral research work on laser-induced breakdown spectroscopy (LIBS) on thermal barrier coatings and gamma- gamma prime diffusion aluminide coatings on Ni-base superalloy substrates during the year 2005-2007. He has a dynamic research career spanning over thirty years in the field of Metallurgical Engineering. His research experience in Surface Engineering and Vacuum Investment Casting covers vast areas like Protective coatings (including bond coats and thermal barrier coatings) for gas turbine applications and for refractory materials, Mechanical behaviour of aluminide coated superalloys and Ti-alloys, Mechanical behaviour of standalone bond coats, Oxidation resistant coatings for Ti-alloys, Gas-particle interaction in high temperature flames, Laser processing of materials, Ni-base superalloy castings for gas turbine engines.
-                </p>
-                <p>
-                    Dr Das was involved in execution of several projects pertaining to scientific and technological requirements at DMRL, Hyderabad in the field of surface engineering and vacuum investment casting. He has extensive hands-on experience with key processing and characterization equipment like Air plasma spray system, Oxy-acetylene flame-spray system, Isothermal and cyclic oxidation test system, Electroplating units, Pack cementation coating systems, Chemical vapour coating deposition systems, Vacuum furnaces, High velocity oxidation rig (or burner rig), Conventional and ultra-fast lasers, Optical microscopes, Scanning electron microscope, Electron probe micro-analyser.
-                </p>
-                <p>
-                    He is involved in research and development activities concerning various surface-related issues of materials such as protection and performance enhancement by application of coatings and tribological behaviour of materials. He has written over 100 technical papers, articles in international journals and was invited as speaker in several national and international seminars. His current research activities include mechanical behaviour of bond coated superalloys and aluminide coated near alpha-Ti alloys along with Silicide coatings on W, Mo and Nb-base alloys used for hypersonic applications. His expertise also includes fabrication of materials via various process technologies like direct solidification, crystal casting, investment casting, etc.
-                </p>
-            </div>
-        </div>
+  <div class="row g-4 align-items-start">
+    <!-- Left: Director Card -->
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm p-3 text-center">
+        <div class="d-flex justify-content-center mb-3">
+            <img src="{{ url_for('static', filename='images/Dr. Dipak Kr. Das_Director.JPG') }}"
+                 alt="Director"
+                 class="rounded-circle"
+                 style="width: 220px; height: 220px; object-fit: cover;">
+          </div>
+        <h4 class="text-primary">Dr. Dipak Kumar Das</h4>
+        <p class="text-muted">Director, DIA CoE IIT Kharagpur</p>
+      </div>
     </div>
+
+    <!-- Right: Director Description -->
+    <div class="col-lg-8">
+      <div class="bg-light rounded shadow-sm p-4">
+        <h4 class="text-secondary mb-3">About the Director</h4>
+        <p>
+          Dr Dipak Kumar Das took over as Director, DIA-CoE IIT Kharagpur in January 2024. Prior to that, he served as Scientist H at the Defence Metallurgical Research Laboratory, Hyderabad, and held the position of Associate Director there for 13 years.
+        </p>
+        <p>
+          He earned his B.Tech and M.Tech in Metallurgical Engineering from IIT Kharagpur, and his PhD from IIT BHU. He conducted Post-Doctoral research in laser-induced breakdown spectroscopy (LIBS) on coatings and Ni-base superalloy substrates.
+        </p>
+        <p>
+          With over 30 years of experience in Surface Engineering and Vacuum Investment Casting, Dr Das has contributed to protective coatings for gas turbines, Ti-alloys, oxidation-resistant coatings, and superalloy development.
+        </p>
+        <p>
+          He has executed several major projects at DMRL, Hyderabad, and is hands-on with advanced systems such as plasma sprays, oxidation rigs, CVD units, vacuum furnaces, lasers, SEMs, and EPMA.
+        </p>
+        <p>
+          Dr Das has published over 100 papers, delivered keynote talks, and continues pioneering research in coatings for hypersonic applications and novel casting techniques.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- Optional Styling -->
+<style>
+  .card img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .bg-light {
+    background-color: #f8f9fa !important;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .text-center h4 {
+      margin-top: 15px;
+    }
+  }
+</style>
 {% endblock %}
