@@ -26,7 +26,7 @@ def vision():
 @blueprint.route('/people')
 def people():
 
-    with open("app\static\json_files\people.json", "r") as content:
+    with open("app/static/json_files/people.json", "r") as content:
         people_data = json.load(content)
     return render_template("people.html", people=people_data)
 
