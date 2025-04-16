@@ -30,12 +30,15 @@
                     <img src="{{ url_for('static', filename='images/' + person.image) }}" alt="{{ person.name }}"
                         class="rounded-circle" style="width: 160px; height: 160px; object-fit: cover;">
                 </div>
-                <h5 class="text-dark">{{ person.name }}</h5>
+                <h5 class="text-primary">{{ person.name }}</h5>
                 <p class="text-muted mb-2">{{ person.designation }}</p>
                 <button class="btn btn-outline-primary btn-sm" onclick="toggleDescription('{{ person.id }}')">More
                     Info</button>
                 <div class="people-description mt-3" id="{{ person.id }}" style="display:none;">
-                    <p class="text-muted small">{{ person.description }}</p>
+                    {% for description in person.descriptions %}
+                        <p class="text-muted small">{{ description }}</p>
+                    {% endfor %}
+                    <!-- <p class="text-muted small">{{ person.description }}</p> -->
                 </div>
             </div>
         </div>
@@ -61,6 +64,9 @@
         border-radius: 20px;
         font-size: 0.85rem;
         padding: 6px 16px;
+    }
+    .people-description p {
+        text-align: justify;
     }
 </style>
 {% endblock %}

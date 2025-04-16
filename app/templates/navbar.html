@@ -16,7 +16,8 @@
 
         .top-bar {
             /* background: linear-gradient(to right, #212529, #0d47a1); */
-            background: linear-gradient(60deg, white 12%, #031634 0%);
+            background: #031634;
+            /* background: linear-gradient(60deg, white 12%, #031634 0%); */
             /* Royal Blue Gradient */
             color: #ffa800;
             padding: 12px 20px;
@@ -28,20 +29,28 @@
         }
 
         .logo-zone {
-            /* background-color: white; */
+            /* background-color: white;
             width: 100px;
             height: 100px;
-            /* border-radius: 0 50% 50% 0; */
+            border-radius: 0 50% 50% 0;
             margin-left: -10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); */
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); */
+
+            background-color: white;
+            border-radius: 50%;
+            padding: 1px;
+            /* Adjust as needed */
+            display: inline-block;
         }
 
         .logo-img {
             height: 120px;
             width: auto;
+            display: block;
+            border-radius: 50%;
         }
 
         .top-bar h2,
@@ -127,8 +136,8 @@
             <img src="{{ url_for('static', filename='images/dia-coe-iitkgp.png') }}" alt="DIA-CoE" class="logo-img" />
         </div>
         <div class="flex-grow-1 text-center px-3">
-            <h2>DRDO Industry Academia Centre of Excellence</h2>
-            <h5 style="color: white;">Indian Institute of Technology Kharagpur</h5>
+            <h2 style="font-weight: bolder;">DRDO Industry Academia Centre of Excellence</h2>
+            <h5 style="color: white; font-weight: bold">Indian Institute of Technology Kharagpur</h5>
         </div>
     </div>
 
@@ -168,7 +177,7 @@
         </div>
     </nav>
 
-    <div style="padding: 20px;">
+    <div style="padding: 1px;">
         {% block content %}{% endblock %}
     </div>
 

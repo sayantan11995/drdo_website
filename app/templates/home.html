@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 <!-- Announcements Section -->
-<div class="container mt-3">
-  <div class="bg-light p-3 rounded border d-flex align-items-center">
+<div class="container-fluid mt-2">
+  <div class="bg-light p-2 rounded border d-flex align-items-center">
     <strong class="text-danger me-3">📢 Announcements:</strong>
     <div class="overflow-hidden flex-grow-1">
       <div id="announcement-slider" class="text-nowrap" style="animation: scroll-left 25s linear infinite;">
@@ -20,13 +20,17 @@
 </div>
 
 <!-- Carousel Section -->
-<div class="container mt-4">
-  <div class="owl-carousel owl-theme">
+<div class="mt-2">
+  <div class="owl-carousel">
     {% for image in [
       'images/Centre Photos/1732632642347.jpg',
       'images/Centre Photos/1732632642306.jpg',
       'images/Centre Photos/1732632642434.jpg',
-      'images/Centre Photos/1732632826167.jpg'
+      'images/Centre Photos/1732632826167.jpg',
+      'images/Centre Photos/DN Ray_20240525_095555484.jpg',
+      'images/Centre Photos/DN Ray_Hub Motor 2.jpg',
+      'images/Centre Photos/UR14-JCBCAT DRDO Tushar Sandhan.jpg',
+      'images/Centre Photos/Automated Synthesis of Motion Plans for Multi-Robot Systems from Complex Specifications.png'
     ] %}
     <div class="item">
       <img src="{{ url_for('static', filename=image) }}" alt="Department Image" class="img-fluid rounded shadow-sm">
@@ -36,12 +40,12 @@
 </div>
 
 <!-- Welcome Section -->
-<div class="container mt-5">
+<div class="mt-2">
   <div class="p-5" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(5px); box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
-    <h1 class="text-center text-primary mb-4">Welcome to the DIA-CoE IIT Kharagpur</h1>
-    <p class="lead">The DRDO Industry Academia Centre of Excellence (DIA-CoE) at IIT Kharagpur is a hub of innovation and collaborative research in defense technologies.</p>
-    <p>DIA-CoEs are established by DRDO in premier academic institutions to foster a research ecosystem with academia, industry, and startups. Our center is one of 15 across India, dedicated to developing cutting-edge and critical defense technologies.</p>
-    <p>Since its inception in 2020, DIA-CoE IIT Kharagpur has operated across 48,000 sq. ft., focusing on four major research verticals and collaborating with top scientists, students, and innovators.</p>
+    <h1 class="text-center text-primary mb-4">Welcome to DIA-CoE IIT Kharagpur</h1>
+    <p style="text-align: justify;">DRDO Industry Academia Centre of Excellence (DIA-CoE) was established by DRDO at premier and capable academic Institutes and Universities in the country to build Directed Research Ecosystem through collaboration among DRDO labs, Academia and Startups/Industries. DIA-CoEs will pursue research both in developing cutting-edge technologies and in the areas of denied defence technologies.</p>
+    <p style="text-align: justify;">The primary aim of establishing such DIA-CoEs is to harness & synergize the combined strength of academia, student community, research fellows, niche technology industries & DRDO scientist to provide research & innovations in identified futuristic defence technological domains. These DIA-CoEs will boost & sustain development of advanced technologies for future defence systems and platforms through multi-disciplinary & multi-institutional collaborative efforts. DRDO has established 15 Nos. of DIA-CoEs so far.</p>
+    <p style="text-align: justify;">DIA-CoE started in the year 2020 at IIT Kharagpur with implementation of research areas on defence applications and developing cutting edge technologies through 4 major research verticals. The DIA- CoE is spread over 48000 sq ft. at IIT Kharagpur.</p>
     <div class="text-center">
       <a class="btn btn-primary btn-lg mt-3" href="{{ url_for('app.verticals') }}">Explore Our Research</a>
     </div>
@@ -98,7 +102,7 @@
   }
 
   .owl-carousel .item img {
-    height: 57vh;
+    height: 42vh;
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
