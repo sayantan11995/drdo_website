@@ -76,6 +76,10 @@
     </div>
     {% endfor %}
   </div>
+
+  <div class="text-center">
+    <a class="btn btn-primary btn-lg mt-3" href="{{ url_for('app.proposal_submission_procedure') }}">Apply for Research Proposal</a>
+    </div>
 </div>
 
 <!-- Font Awesome CDN -->
@@ -135,6 +139,23 @@
     border-radius: 20px;
     font-size: 0.85rem;
     padding: 5px 14px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.4);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
   }
 </style>
 {% endblock %}

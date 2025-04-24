@@ -1,0 +1,83 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Proposal Submission Procedure{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center text-primary mb-4">📝 Proposal Submission Procedure</h2>
+  <p class="text-center text-muted mb-4">Follow these steps to submit your proposal to DIA-CoE IIT
+    Kharagpur.</p>
+
+  <div class="accordion" id="procedureAccordion">
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-gradient text-white">
+        <div class="fw-bold d-flex align-items-center justify-content-between w-100" data-bs-toggle="collapse"
+          data-bs-target="#collapseProcedure" style="cursor: pointer;">
+          <span><i class="fas fa-tasks me-2"></i> Procedure for Proposal Submission</span>
+          <i class="fas fa-chevron-down text-white"></i>
+        </div>
+      </div>
+      <div id="collapseProcedure" class="collapse show" data-bs-parent="#procedureAccordion">
+        <div class="card-body">
+          <ol>
+            <li>📥 Download the
+              <a href="{{ url_for('static', filename='forms/Detailed_Proposal_Format.docx') }}" download>
+                <strong>Detailed Proposal Format</strong>
+              </a>
+              (docx file).
+            </li>
+            <li>📝 Fill only the 1st page, Forms 1 & 2 of the proposal in <span class="text-danger"
+                style="text-decoration: underline;">offline mode</span>. Leave the remaining pages
+                unfilled. They will be filled at a later stage, if needed.</li>
+            <li>☑️ Use <strong>dropdowns and checkboxes</strong> wherever available in the form.</li>
+            <li>📧 Send the filled proposal to DIA-CoE office as an email attachment:
+              <ul class="mt-2">
+                <li><a href="mailto:director_dia_coe@iitkgp.ac.in">director_dia_coe@iitkgp.ac.in</a></li>
+                <li><a
+                    href="mailto:administrative_officer_dia_coe@iitkgp.ac.in">administrative_officer_dia_coe@iitkgp.ac.in</a>
+                </li>
+              </ul>
+              <p class="mb-0">for processing at DIA-CoE IIT Kharagpur.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FontAwesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+  .bg-gradient {
+    background: linear-gradient(to right, #002147, #003366) !important;
+  }
+
+  .card-body {
+    background-color: #f9f9f9;
+    color: #212529;
+    padding: 1.25rem;
+  }
+
+  .card-header .fw-bold {
+    font-size: 1rem;
+    user-select: text;
+  }
+
+  .card-body ol li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .card-body a {
+    color: #0d47a1;
+    text-decoration: none;
+  }
+
+  .card-body a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}

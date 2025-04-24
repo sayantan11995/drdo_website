@@ -58,3 +58,7 @@ def contact():
 @blueprint.route('/important_links')
 def important_links():
     return render_template('important_links.html')
+
+@blueprint.route('/proposal_submission_procedure')
+def proposal_submission_procedure():
+    return render_template('proposal_submission_procedure.html')
